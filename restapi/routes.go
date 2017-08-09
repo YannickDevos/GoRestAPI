@@ -1,4 +1,4 @@
-package main
+package restapi
 
 import (
 	"net/http"
@@ -19,11 +19,10 @@ func NewRouter1() *mux.Router {
 
 	router := mux.NewRouter().StrictSlash(true)
 	for _, route := range routes {
-		var handler http.Handler
+		// var handler http.Handler
 
-		handler = route.HandlerFunc
-		handler = Logger(handler, route.Name)
-
+		// handler = route.HandlerFunc
+		// handler = Logger(handler, route.Name)
 		router.
 			Methods(route.Method).
 			Path(route.Pattern).
